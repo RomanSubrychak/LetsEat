@@ -60,13 +60,8 @@
 		964E7D151EBD7EBF003B2CFD /* LetsEat */ = {
 			isa = PBXGroup;
 			children = (
-				964E7D281EBD80D2003B2CFD /* assets.xcassets */,
-				964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */,
-				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
-				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
-				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
-				964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */,
-				964E7D221EBD7EBF003B2CFD /* Info.plist */,
+				964E7D421EBD9C0E003B2CFD /* Application */,
+				964E7D411EBD9C05003B2CFD /* Assets */,
 			);
 			path = LetsEat;
 			sourceTree = "<group>";
@@ -77,6 +72,107 @@
 				964E7D3A1EBD99E6003B2CFD /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		964E7D411EBD9C05003B2CFD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D221EBD7EBF003B2CFD /* Info.plist */,
+				964E7D441EBD9C2E003B2CFD /* Storyboard */,
+				964E7D431EBD9C1B003B2CFD /* Images */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		964E7D421EBD9C0E003B2CFD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D4C1EBD9CCA003B2CFD /* Main */,
+				964E7D4B1EBD9CBF003B2CFD /* Explore */,
+				964E7D4A1EBD9CB0003B2CFD /* Restaurant */,
+				964E7D491EBD9CA9003B2CFD /* Map */,
+				964E7D481EBD9C7E003B2CFD /* Location */,
+				964E7D471EBD9C72003B2CFD /* Review */,
+				964E7D461EBD9C55003B2CFD /* Review List */,
+				964E7D451EBD9C47003B2CFD /* Common */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		964E7D431EBD9C1B003B2CFD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D281EBD80D2003B2CFD /* assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		964E7D441EBD9C2E003B2CFD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
+				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
+				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
+				964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		964E7D451EBD9C47003B2CFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		964E7D461EBD9C55003B2CFD /* Review List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Review List";
+			sourceTree = "<group>";
+		};
+		964E7D471EBD9C72003B2CFD /* Review */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Review;
+			sourceTree = "<group>";
+		};
+		964E7D481EBD9C7E003B2CFD /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		964E7D491EBD9CA9003B2CFD /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		964E7D4A1EBD9CB0003B2CFD /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Restaurant;
+			sourceTree = "<group>";
+		};
+		964E7D4B1EBD9CBF003B2CFD /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Explore;
+			sourceTree = "<group>";
+		};
+		964E7D4C1EBD9CCA003B2CFD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

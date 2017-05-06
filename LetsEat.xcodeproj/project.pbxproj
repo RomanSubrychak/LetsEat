@@ -11,6 +11,9 @@
 		964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */; };
 		964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */; };
 		964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D281EBD80D2003B2CFD /* assets.xcassets */; };
+		964E7D3B1EBD99E6003B2CFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964E7D3A1EBD99E6003B2CFD /* MapKit.framework */; };
+		964E7D3D1EBD9A9C003B2CFD /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */; };
+		964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		964E7D201EBD7EBF003B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964E7D221EBD7EBF003B2CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		964E7D281EBD80D2003B2CFD /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		964E7D3A1EBD99E6003B2CFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		964E7D3F1EBD9AF6003B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964E7D3B1EBD99E6003B2CFD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +45,7 @@
 			children = (
 				964E7D151EBD7EBF003B2CFD /* LetsEat */,
 				964E7D141EBD7EBF003B2CFD /* Products */,
+				964E7D391EBD99E6003B2CFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,10 +63,20 @@
 				964E7D281EBD80D2003B2CFD /* assets.xcassets */,
 				964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */,
 				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
+				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
+				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
 				964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */,
 				964E7D221EBD7EBF003B2CFD /* Info.plist */,
 			);
 			path = LetsEat;
+			sourceTree = "<group>";
+		};
+		964E7D391EBD99E6003B2CFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				964E7D3A1EBD99E6003B2CFD /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +138,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964E7D3D1EBD9A9C003B2CFD /* Explore.storyboard in Resources */,
 				964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */,
+				964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */,
 				964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */,
 				964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */,
 			);
@@ -154,6 +174,14 @@
 				964E7D201EBD7EBF003B2CFD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				964E7D3F1EBD9AF6003B2CFD /* Base */,
+			);
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -297,6 +325,7 @@
 				964E7D271EBD7EBF003B2CFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

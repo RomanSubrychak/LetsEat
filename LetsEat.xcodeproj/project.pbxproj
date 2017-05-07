@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640DFA31EBE6FF00026CB77 /* ExploreViewController.swift */; };
+		9640DFA61EBEAFA00026CB77 /* ExploreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640DFA51EBEAFA00026CB77 /* ExploreItem.swift */; };
 		964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */; };
 		964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */; };
 		964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */; };
@@ -15,10 +16,16 @@
 		964E7D3B1EBD99E6003B2CFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964E7D3A1EBD99E6003B2CFD /* MapKit.framework */; };
 		964E7D3D1EBD9A9C003B2CFD /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */; };
 		964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */; };
+		965F64751EBF75EF0056060F /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965F64741EBF75EF0056060F /* ExploreData.plist */; };
+		965F64771EBF77550056060F /* ExploreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64761EBF77550056060F /* ExploreDataManager.swift */; };
+		965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64781EBF7C2B0056060F /* ExploreCell.swift */; };
+		965F647E1EBF81CD0056060F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F647D1EBF81CD0056060F /* RestaurantListViewController.swift */; };
+		965F64831EBF8D3A0056060F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64821EBF8D3A0056060F /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9640DFA31EBE6FF00026CB77 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		9640DFA51EBEAFA00026CB77 /* ExploreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreItem.swift; sourceTree = "<group>"; };
 		964E7D131EBD7EBF003B2CFD /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		964E7D1B1EBD7EBF003B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +35,11 @@
 		964E7D3A1EBD99E6003B2CFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		964E7D3F1EBD9AF6003B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
+		965F64741EBF75EF0056060F /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
+		965F64761EBF77550056060F /* ExploreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreDataManager.swift; sourceTree = "<group>"; };
+		965F64781EBF7C2B0056060F /* ExploreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		965F647D1EBF81CD0056060F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
+		965F64821EBF8D3A0056060F /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 		9640DFA11EBE69F50026CB77 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				965F64781EBF7C2B0056060F /* ExploreCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -60,6 +73,9 @@
 		9640DFA21EBE69FB0026CB77 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				965F64741EBF75EF0056060F /* ExploreData.plist */,
+				9640DFA51EBEAFA00026CB77 /* ExploreItem.swift */,
+				965F64761EBF77550056060F /* ExploreDataManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -166,6 +182,9 @@
 		964E7D481EBD9C7E003B2CFD /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				965F64811EBF8D1C0056060F /* Model */,
+				965F64801EBF8D140056060F /* View */,
+				965F647F1EBF8D060056060F /* Controller */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -180,6 +199,7 @@
 		964E7D4A1EBD9CB0003B2CFD /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				965F647A1EBF81700056060F /* Restaurant List */,
 			);
 			name = Restaurant;
 			sourceTree = "<group>";
@@ -200,6 +220,52 @@
 				964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		965F647A1EBF81700056060F /* Restaurant List */ = {
+			isa = PBXGroup;
+			children = (
+				965F647C1EBF81950056060F /* View */,
+				965F647B1EBF818C0056060F /* Controller */,
+			);
+			name = "Restaurant List";
+			sourceTree = "<group>";
+		};
+		965F647B1EBF818C0056060F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				965F647D1EBF81CD0056060F /* RestaurantListViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		965F647C1EBF81950056060F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		965F647F1EBF8D060056060F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				965F64821EBF8D3A0056060F /* LocationViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		965F64801EBF8D140056060F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		965F64811EBF8D1C0056060F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +331,7 @@
 				964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */,
 				964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */,
 				964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */,
+				965F64751EBF75EF0056060F /* ExploreData.plist in Resources */,
 				964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F64831EBF8D3A0056060F /* LocationViewController.swift in Sources */,
+				965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */,
+				965F647E1EBF81CD0056060F /* RestaurantListViewController.swift in Sources */,
 				9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */,
 				964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */,
+				9640DFA61EBEAFA00026CB77 /* ExploreItem.swift in Sources */,
+				965F64771EBF77550056060F /* ExploreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

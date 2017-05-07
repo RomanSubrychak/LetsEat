@@ -21,6 +21,7 @@
 		965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64781EBF7C2B0056060F /* ExploreCell.swift */; };
 		965F647E1EBF81CD0056060F /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F647D1EBF81CD0056060F /* RestaurantListViewController.swift */; };
 		965F64831EBF8D3A0056060F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64821EBF8D3A0056060F /* LocationViewController.swift */; };
+		965F64851EBF90490056060F /* Location.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965F64841EBF90490056060F /* Location.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		965F64781EBF7C2B0056060F /* ExploreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		965F647D1EBF81CD0056060F /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		965F64821EBF8D3A0056060F /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		965F64841EBF90490056060F /* Location.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Location.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 		965F64811EBF8D1C0056060F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				965F64841EBF90490056060F /* Location.plist */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */,
 				965F64751EBF75EF0056060F /* ExploreData.plist in Resources */,
 				964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */,
+				965F64851EBF90490056060F /* Location.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640DFA31EBE6FF00026CB77 /* ExploreViewController.swift */; };
 		964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */; };
 		964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */; };
 		964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9640DFA31EBE6FF00026CB77 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		964E7D131EBD7EBF003B2CFD /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964E7D161EBD7EBF003B2CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		964E7D1B1EBD7EBF003B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9640DFA01EBE69E90026CB77 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9640DFA31EBE6FF00026CB77 /* ExploreViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9640DFA11EBE69F50026CB77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9640DFA21EBE69FB0026CB77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		964E7D0A1EBD7EBF003B2CFD = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +187,9 @@
 		964E7D4B1EBD9CBF003B2CFD /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				9640DFA21EBE69FB0026CB77 /* Model */,
+				9640DFA11EBE69F50026CB77 /* View */,
+				9640DFA01EBE69E90026CB77 /* Controller */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -249,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */,
 				964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

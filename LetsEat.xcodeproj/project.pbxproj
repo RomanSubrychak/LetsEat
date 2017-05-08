@@ -28,6 +28,7 @@
 		965F64901EC008FC0056060F /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F648F1EC008FC0056060F /* MapDataManager.swift */; };
 		965F64931EC00D0D0056060F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64921EC00D0D0056060F /* DataManager.swift */; };
 		965F64951EC00F6D0056060F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64941EC00F6D0056060F /* MapViewController.swift */; };
+		965F64971EC028140056060F /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965F64961EC028140056060F /* RestaurantDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		965F648F1EC008FC0056060F /* MapDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataManager.swift; sourceTree = "<group>"; };
 		965F64921EC00D0D0056060F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		965F64941EC00F6D0056060F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		965F64961EC028140056060F /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
+				965F64961EC028140056060F /* RestaurantDetail.storyboard */,
 				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
 				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
 				964E7D1F1EBD7EBF003B2CFD /* LaunchScreen.storyboard */,
@@ -379,6 +382,7 @@
 				965F64751EBF75EF0056060F /* ExploreData.plist in Resources */,
 				964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */,
 				965F648C1EC0016F0056060F /* MapLocations.plist in Resources */,
+				965F64971EC028140056060F /* RestaurantDetail.storyboard in Resources */,
 				965F64851EBF90490056060F /* Location.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,6 +23,7 @@
 		965F64831EBF8D3A0056060F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64821EBF8D3A0056060F /* LocationViewController.swift */; };
 		965F64851EBF90490056060F /* Location.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965F64841EBF90490056060F /* Location.plist */; };
 		965F64871EBF91520056060F /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64861EBF91520056060F /* LocationDataManager.swift */; };
+		965F648C1EC0016F0056060F /* MapLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965F648B1EC0016F0056060F /* MapLocations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		965F64821EBF8D3A0056060F /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		965F64841EBF90490056060F /* Location.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Location.plist; sourceTree = "<group>"; };
 		965F64861EBF91520056060F /* LocationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		965F648B1EC0016F0056060F /* MapLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MapLocations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		964E7D491EBD9CA9003B2CFD /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				965F648A1EC0012C0056060F /* Model */,
 				965F64881EC0004F0056060F /* Controller */,
 			);
 			name = Map;
@@ -282,6 +285,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		965F648A1EC0012C0056060F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				965F648B1EC0016F0056060F /* MapLocations.plist */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,6 +358,7 @@
 				964E7D1C1EBD7EBF003B2CFD /* Main.storyboard in Resources */,
 				965F64751EBF75EF0056060F /* ExploreData.plist in Resources */,
 				964E7D291EBD80D2003B2CFD /* assets.xcassets in Resources */,
+				965F648C1EC0016F0056060F /* MapLocations.plist in Resources */,
 				965F64851EBF90490056060F /* Location.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

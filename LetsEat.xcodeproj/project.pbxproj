@@ -25,6 +25,8 @@
 		965F64871EBF91520056060F /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64861EBF91520056060F /* LocationDataManager.swift */; };
 		965F648C1EC0016F0056060F /* MapLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965F648B1EC0016F0056060F /* MapLocations.plist */; };
 		965F648E1EC003E60056060F /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F648D1EC003E60056060F /* RestaurantAnnotation.swift */; };
+		965F64901EC008FC0056060F /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F648F1EC008FC0056060F /* MapDataManager.swift */; };
+		965F64931EC00D0D0056060F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64921EC00D0D0056060F /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		965F64861EBF91520056060F /* LocationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
 		965F648B1EC0016F0056060F /* MapLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MapLocations.plist; sourceTree = "<group>"; };
 		965F648D1EC003E60056060F /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
+		965F648F1EC008FC0056060F /* MapDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataManager.swift; sourceTree = "<group>"; };
+		965F64921EC00D0D0056060F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 		964E7D451EBD9C47003B2CFD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				965F64911EC00CF60056060F /* Misc */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -292,8 +297,17 @@
 			children = (
 				965F648B1EC0016F0056060F /* MapLocations.plist */,
 				965F648D1EC003E60056060F /* RestaurantAnnotation.swift */,
+				965F648F1EC008FC0056060F /* MapDataManager.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		965F64911EC00CF60056060F /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				965F64921EC00D0D0056060F /* DataManager.swift */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,9 +391,11 @@
 				965F648E1EC003E60056060F /* RestaurantAnnotation.swift in Sources */,
 				965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */,
 				965F64871EBF91520056060F /* LocationDataManager.swift in Sources */,
+				965F64901EC008FC0056060F /* MapDataManager.swift in Sources */,
 				965F647E1EBF81CD0056060F /* RestaurantListViewController.swift in Sources */,
 				9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */,
 				964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */,
+				965F64931EC00D0D0056060F /* DataManager.swift in Sources */,
 				9640DFA61EBEAFA00026CB77 /* ExploreItem.swift in Sources */,
 				965F64771EBF77550056060F /* ExploreDataManager.swift in Sources */,
 			);

@@ -29,6 +29,9 @@
 		965F64931EC00D0D0056060F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64921EC00D0D0056060F /* DataManager.swift */; };
 		965F64951EC00F6D0056060F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64941EC00F6D0056060F /* MapViewController.swift */; };
 		965F64971EC028140056060F /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965F64961EC028140056060F /* RestaurantDetail.storyboard */; };
+		965F64991EC029B30056060F /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F64981EC029B30056060F /* Segue.swift */; };
+		965F649B1EC02B820056060F /* RestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F649A1EC02B820056060F /* RestaurantItem.swift */; };
+		965F649E1EC030BC0056060F /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F649D1EC030BC0056060F /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		965F64921EC00D0D0056060F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		965F64941EC00F6D0056060F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		965F64961EC028140056060F /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
+		965F64981EC029B30056060F /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		965F649A1EC02B820056060F /* RestaurantItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantItem.swift; sourceTree = "<group>"; };
+		965F649D1EC030BC0056060F /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,7 @@
 		964E7D4A1EBD9CB0003B2CFD /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				965F649C1EC0308E0056060F /* RestaurantDetail */,
 				965F647A1EBF81700056060F /* Restaurant List */,
 			);
 			name = Restaurant;
@@ -304,6 +311,7 @@
 				965F648B1EC0016F0056060F /* MapLocations.plist */,
 				965F648D1EC003E60056060F /* RestaurantAnnotation.swift */,
 				965F648F1EC008FC0056060F /* MapDataManager.swift */,
+				965F649A1EC02B820056060F /* RestaurantItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -312,8 +320,17 @@
 			isa = PBXGroup;
 			children = (
 				965F64921EC00D0D0056060F /* DataManager.swift */,
+				965F64981EC029B30056060F /* Segue.swift */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		965F649C1EC0308E0056060F /* RestaurantDetail */ = {
+			isa = PBXGroup;
+			children = (
+				965F649D1EC030BC0056060F /* RestaurantDetailViewController.swift */,
+			);
+			name = RestaurantDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,12 +415,15 @@
 				965F648E1EC003E60056060F /* RestaurantAnnotation.swift in Sources */,
 				965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */,
 				965F64871EBF91520056060F /* LocationDataManager.swift in Sources */,
+				965F64991EC029B30056060F /* Segue.swift in Sources */,
 				965F64901EC008FC0056060F /* MapDataManager.swift in Sources */,
 				965F647E1EBF81CD0056060F /* RestaurantListViewController.swift in Sources */,
+				965F649E1EC030BC0056060F /* RestaurantDetailViewController.swift in Sources */,
 				9640DFA41EBE6FF00026CB77 /* ExploreViewController.swift in Sources */,
 				965F64951EC00F6D0056060F /* MapViewController.swift in Sources */,
 				964E7D171EBD7EBF003B2CFD /* AppDelegate.swift in Sources */,
 				965F64931EC00D0D0056060F /* DataManager.swift in Sources */,
+				965F649B1EC02B820056060F /* RestaurantItem.swift in Sources */,
 				9640DFA61EBEAFA00026CB77 /* ExploreItem.swift in Sources */,
 				965F64771EBF77550056060F /* ExploreDataManager.swift in Sources */,
 			);

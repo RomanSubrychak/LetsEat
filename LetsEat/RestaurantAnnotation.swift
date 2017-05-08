@@ -20,6 +20,8 @@ class RestaurantAnnotation: NSObject {
 	var state: String?
 	var imageURL: String?
 	
+	var data: [String: AnyObject]?
+	
 	init(dict: [String: AnyObject]) {
 		name = dict["name"] as? String
 		
@@ -33,6 +35,15 @@ class RestaurantAnnotation: NSObject {
 		postalCode = dict["postal_code"] as? String
 		state = dict["state"] as? String
 		imageURL = dict["image_url"] as? String
+		
+		data = dict
+	}
+	
+	var restaurantItem: RestaurantItem {
+		guard let restaurantData = data else {
+			return RestaurantItem()
+		}
+		return RestaurantItem(dict: restaurantData)
 	}
 }
 

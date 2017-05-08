@@ -13,11 +13,29 @@ class MapViewController: UIViewController {
 	
 	@IBOutlet weak var mapView: MKMapView!
 	let manager = MapDataManager()
+	var selectedRestaurant: RestaurantItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initialize()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let identifier = segue.identifier {
+			switch identifier {
+			case Segue.showDetail.rawValue:
+				showRestaurantDetail(segue: segue)
+			default:
+				print("Segue not added")
+			}
+		}
+	}
+	
+	func showRestaurantDetail(segue: UIStoryboardSegue) {
+		if let viewController = segue.destination as? RestaurantDetailViewController, let restaurant = selectedRestaurant {
+			viewController.selectedRestaurant = restaurant
+		}
 	}
 	
 	func initialize() {
@@ -59,5 +77,15 @@ extension MapViewController: MKMapViewDelegate {
 		}
 		
 		return annotationView
+	}
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+		guard let annotation = mapView.selectedAnnotations.first else {
+			return
+		}
+		let data = annotation as! RestaurantAnnotation
+		selectedRestaurant = data.restaurantItem
+		
+		self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
 	}
 }

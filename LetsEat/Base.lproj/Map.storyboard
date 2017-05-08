@@ -102,6 +102,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQu-U4-gCL" id="aDh-eo-4Gk"/>
+                        <segue destination="iI0-ej-8Fg" kind="show" identifier="showDetail" id="nhE-lc-4Oo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahT-lh-WpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +126,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fru-bO-pqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3279" y="528"/>
+            <point key="canvasLocation" x="3425" y="954"/>
+        </scene>
+        <!--RestaurantDetail-->
+        <scene sceneID="dtw-oB-TEs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantDetail" id="iI0-ej-8Fg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOC-pl-2Ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2144" y="240"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rDD-lD-gSB">
@@ -143,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfc-PQ-MC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340" y="530"/>
+            <point key="canvasLocation" x="2337" y="954"/>
         </scene>
     </scenes>
     <resources>

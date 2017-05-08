@@ -13,7 +13,7 @@ class ExploreDataManager: DataManager {
 	fileprivate var items = [ExploreItem]()
 	
 	func fetch() {
-		for data in load(data: "ExploreData") {
+		for data in load(file: "ExploreData") {
 			items.append(ExploreItem(dict: data))
 		}
 	}

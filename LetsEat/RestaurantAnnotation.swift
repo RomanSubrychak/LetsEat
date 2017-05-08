@@ -38,6 +38,10 @@ class RestaurantAnnotation: NSObject {
 
 extension RestaurantAnnotation: MKAnnotation {
 	
+	var title: String? {
+		return name ?? ""
+	}
+	
 	var subtitle: String? {
 		return cuisines.isEmpty ? "" : cuisines.joined(separator: ",")
 	}

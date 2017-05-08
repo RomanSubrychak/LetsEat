@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class MapDataManager: DataManager {
 	
@@ -20,10 +21,18 @@ class MapDataManager: DataManager {
 		if !items.isEmpty {
 			items.removeAll()
 		}
-		for data in load(data: "MapLocations") {
+		for data in load(file: "MapLocations") {
 			items.append(RestaurantAnnotation(dict: data))
 		}
 		
 		completion(items)
+	}
+	
+	func currentLocation(latDelta: CLLocationDegrees, longDelta: CLLocationDegrees) -> MKCoordinateRegion {
+		guard let item = items.first else {
+			return MKCoordinateRegion()
+		}
+		let span = MKCoordinateSpanMake(latDelta, longDelta)
+		return MKCoordinateRegion(center: item.coordinate, span: span)
 	}
 }

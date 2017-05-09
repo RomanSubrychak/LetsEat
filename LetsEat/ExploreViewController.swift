@@ -9,18 +9,83 @@
 import UIKit
 
 class ExploreViewController: UIViewController {
+	
+	var selectedCity: String?
+	@IBOutlet weak var lblLocation: UILabel!
 
-	@IBOutlet weak var colectionView: UICollectionView!
+	@IBOutlet weak var collectionView: UICollectionView!
 	let manager = ExploreDataManager()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		manager.fetch()
-    }
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier! {
+		case Segue.locationList.rawValue:
+			showLocationList(segue: segue)
+		case Segue.restaurantList.rawValue:
+			showRestaurantListing(segue: segue)
+		default:
+			print("Segue not added")
+		}
+	}
+	
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+		if identifier == Segue.restaurantList.rawValue {
+			guard selectedCity != nil else {
+				showAlert()
+				return false
+			}
+			return true
+		}
+		return true
+	}
+	
+	func showLocationList(segue: UIStoryboardSegue) {
+		guard let navController = segue.destination as? UINavigationController,
+			let viewController = navController.topViewController as? LocationViewController else {
+				return
+		}
+		guard let city = selectedCity else {
+			return
+		}
+		viewController.selectedCity = city
+		
+	}
+	
+	func showRestaurantListing(segue: UIStoryboardSegue) {
+		if let viewController = segue.destination as? RestaurantListViewController,
+			let city = selectedCity,
+			let index = collectionView.indexPathsForSelectedItems?.first,
+			let type = manager.explore(at: index).name {
+			
+			viewController.selectedType = type
+			viewController.selectedCity = city
+			
+		}
+	}
+	
+	func showAlert() {
+		let alertController = UIAlertController(title: "Location Needed", message: "Please select a location", preferredStyle: .alert)
+		let okAction = UIAlertAction(title: "OK", style: .default)
+		alertController.addAction(okAction)
+		present(alertController, animated:  true)
+	}
 	
 	@IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
 		
+	}
+	
+	@IBAction func unwindLocationDone(segue: UIStoryboardSegue) {
+		if let viewController = segue.source as? LocationViewController {
+			selectedCity = viewController.selectedCity
+			if let location = viewController.selectedCity {
+				lblLocation.text = location
+			}
+		}
 	}
 }
 

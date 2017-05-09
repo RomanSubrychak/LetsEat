@@ -33,4 +33,11 @@ class LocationDataManager {
 		}
 		return locations as! [String]
 	}
+	
+	func findLocation(by name: String) -> (isFound: Bool, postion: Int) {
+		guard let index = arrLocations.index(of: name) else {
+			return (false, 0)
+		}
+		return (true, index)
+	}
 }

@@ -83,7 +83,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJx-Z3-79k">
                                     <rect key="frame" x="0.0" y="0.0" width="118" height="33"/>
                                     <connections>
-                                        <segue destination="92v-Bn-Cmm" kind="presentation" id="XCd-be-jST"/>
+                                        <segue destination="92v-Bn-Cmm" kind="presentation" identifier="locationList" id="XCd-be-jST"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -122,9 +122,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mJ9-XU-mAF"/>
+                    <navigationItem key="navigationItem" id="mJ9-XU-mAF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rRg-zl-1i8">
+                            <connections>
+                                <segue destination="SYG-gK-ZCW" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="OOd-zA-e6D"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="n4o-bS-w2T">
+                            <connections>
+                                <segue destination="SYG-gK-ZCW" kind="unwind" unwindAction="unwindLocationDoneWithSegue:" id="UPp-Mb-KSf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fru-bO-pqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SYG-gK-ZCW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3425" y="954"/>
         </scene>

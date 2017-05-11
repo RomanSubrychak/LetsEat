@@ -21,7 +21,7 @@ class MapDataManager: DataManager {
 		if !items.isEmpty {
 			items.removeAll()
 		}
-		for data in load(file: "MapLocations") {
+		for data in RestaurantAPIManager.loadJSON(file: "Chicago") {
 			items.append(RestaurantAnnotation(dict: data))
 		}
 		

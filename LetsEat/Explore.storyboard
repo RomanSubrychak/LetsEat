@@ -337,7 +337,7 @@
                                             <outlet property="lblCity" destination="Ml8-Uh-YQS" id="kWo-XX-j8q"/>
                                             <outlet property="lblCuisine" destination="aHo-aM-UB8" id="XHg-VB-4PM"/>
                                             <outlet property="lblTitle" destination="7Gh-7D-J9y" id="CdO-cz-yh8"/>
-                                            <segue destination="4tv-uD-Fus" kind="show" id="YIe-Xt-LVO"/>
+                                            <segue destination="4tv-uD-Fus" kind="show" identifier="showDetail" id="YIe-Xt-LVO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -356,6 +356,20 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="rpQ-b8-osk">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="dQ1-VB-v1b">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="logo-nav" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-oL-v2n">
+                                    <rect key="frame" x="27" y="6" width="96" height="21"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="7Np-5C-683" id="ZRO-dC-sQh"/>
                     </connections>
@@ -377,6 +391,7 @@
         <image name="down-arrow" width="10" height="7"/>
         <image name="icon-explore-off" width="35" height="23"/>
         <image name="icon-explore-on" width="35" height="23"/>
+        <image name="logo-nav" width="96" height="21"/>
         <image name="restaurant-list-img" width="82" height="82"/>
     </resources>
 </document>

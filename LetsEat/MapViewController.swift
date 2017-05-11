@@ -49,6 +49,14 @@ class MapViewController: UIViewController {
 		mapView.setRegion(manager.currentLocation(latDelta: 0.5, longDelta: 0.5), animated: true)
 		mapView.addAnnotations(manager.annotations)
 	}
+	
+	func unwindLocationCancel(segue: UIStoryboardSegue) {
+		
+	}
+	
+	func unwindLocationDone(segue: UIStoryboardSegue) {
+		
+	}
 }
 
 extension MapViewController: MKMapViewDelegate {

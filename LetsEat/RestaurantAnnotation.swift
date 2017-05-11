@@ -25,10 +25,13 @@ class RestaurantAnnotation: NSObject {
 	init(dict: [String: AnyObject]) {
 		name = dict["name"] as? String
 		
-		if let cuisines = dict["cuisine"] as? [String] {
-			self.cuisines = cuisines
+		if let cuisines = dict["cuisines"] as? [AnyObject] {
+   			for data in cuisines {
+				if let cuisine = data["cuisine"] as? String {
+					self.cuisines.append(cuisine)
+				}
+   			}
 		}
-		
 		latitude = dict["lat"] as? Double
 		longitude = dict["lng"] as? Double
 		address = dict["address"] as? String

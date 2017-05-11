@@ -32,6 +32,22 @@ class RestaurantListViewController: UIViewController {
 		}
 		manager.fetch(by: location,withFilter: type, completionHandler: collectionView.reloadData)
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier! {
+		case Segue.showDetail.rawValue:
+			showRestaurantDetail(segue: segue)
+		default:
+			print("segue not added")
+		}
+	}
+	
+	func showRestaurantDetail(segue: UIStoryboardSegue) {
+		if let viewController = segue.destination as? RestaurantDetailViewController, let index = collectionView.indexPathsForSelectedItems?.first {
+			selectedRestaurant = manager.restaurantItem(at: index)
+			viewController.selectedRestaurant = selectedRestaurant
+		}
+	}
 }
 
 extension RestaurantListViewController: UICollectionViewDataSource {

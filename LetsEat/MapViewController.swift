@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import LetsEatDataKit
 
 class MapViewController: UIViewController {
 	

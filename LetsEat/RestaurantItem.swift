@@ -9,24 +9,24 @@
 import Foundation
 import MapKit
 
-struct RestaurantItem {
-	var name:String?
-	var city:String?
-	var address:String?
-	var price:Int?
-	var state:String?
-	var longitude:Float?
-	var latitude:Float?
-	var cuisines = [String]()
-	var image: String?
-	var restaurantID: Int?
-	var data: [String: AnyObject]?
+public struct RestaurantItem {
+	public var name:String?
+	public var city:String?
+	public var address:String?
+	public var price:Int?
+	public var state:String?
+	public var longitude:Float?
+	public var latitude:Float?
+	public var cuisines = [String]()
+	public var image: String?
+	public var restaurantID: Int?
+	public var data: [String: AnyObject]?
 	
-	var cuisine: String? {
+	public var cuisine: String? {
 		return cuisines.isEmpty ? "" : cuisines.joined(separator: ",")
 	}
 	
-	var annotation: RestaurantAnnotation {
+	public var annotation: RestaurantAnnotation {
 		guard let restaurantData = data else {
 			return RestaurantAnnotation(dict: [:])
 		}
@@ -35,7 +35,7 @@ struct RestaurantItem {
 }
 
 extension RestaurantItem {
-	init(dict: [String: AnyObject]) {
+	public init(dict: [String: AnyObject]) {
 		name  = dict["name"] as? String
 		city = dict["city"] as? String
 		address  = dict["address"] as? String

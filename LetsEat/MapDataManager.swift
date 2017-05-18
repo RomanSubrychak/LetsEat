@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import LetsEatDataKit
 
 class MapDataManager: DataManager {
 	

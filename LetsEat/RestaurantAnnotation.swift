@@ -9,20 +9,20 @@
 import UIKit
 import MapKit
 
-class RestaurantAnnotation: NSObject {
+public class RestaurantAnnotation: NSObject {
 	
-	var name: String?
-	var cuisines = [String]()
-	var latitude: Double?
-	var longitude: Double?
-	var address: String?
-	var postalCode: String?
-	var state: String?
-	var imageURL: String?
+	public var name: String?
+	public var cuisines = [String]()
+	public var latitude: Double?
+	public var longitude: Double?
+	public var address: String?
+	public var postalCode: String?
+	public var state: String?
+	public var imageURL: String?
 	
-	var data: [String: AnyObject]?
+	public var data: [String: AnyObject]?
 	
-	init(dict: [String: AnyObject]) {
+	public init(dict: [String: AnyObject]) {
 		name = dict["name"] as? String
 		
 		if let cuisines = dict["cuisines"] as? [AnyObject] {
@@ -42,7 +42,7 @@ class RestaurantAnnotation: NSObject {
 		data = dict
 	}
 	
-	var restaurantItem: RestaurantItem {
+	public var restaurantItem: RestaurantItem {
 		guard let restaurantData = data else {
 			return RestaurantItem()
 		}
@@ -52,15 +52,15 @@ class RestaurantAnnotation: NSObject {
 
 extension RestaurantAnnotation: MKAnnotation {
 	
-	var title: String? {
+	public var title: String? {
 		return name ?? ""
 	}
 	
-	var subtitle: String? {
+	public var subtitle: String? {
 		return cuisines.isEmpty ? "" : cuisines.joined(separator: ",")
 	}
 	
-	var coordinate: CLLocationCoordinate2D {
+	public var coordinate: CLLocationCoordinate2D {
 		guard let lat = latitude, let long = longitude else {
 			return CLLocationCoordinate2D()
 		}

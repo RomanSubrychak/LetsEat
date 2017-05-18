@@ -25,11 +25,43 @@ class RestaurantDetailViewController: UITableViewController {
 	@IBOutlet weak var noReviewsContainer: UIView!
 	
 	var selectedRestaurant: RestaurantItem?
+	let manager = ReviewDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		initialize()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		checkReviews()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let identifier = segue.identifier {
+			switch identifier {
+			case Segue.showReview.rawValue:
+				showReview(segue: segue)
+			case Segue.showAllReviews.rawValue:
+				showAllReviews(segue: segue)
+			default:
+				print("Segue is not added")
+			}
+		}
+	}
+	
+	func showReview(segue: UIStoryboardSegue) {
+		if let viewController = segue.destination as? CreateReviewViewControllerTableViewController {
+			viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+		}
+	}
+	
+	func showAllReviews(segue: UIStoryboardSegue) {
+		if let viewController = segue.destination as? ReviewListViewController {
+			viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+		}
+	}
 	
 	func setupLabels() {
 		guard let restaurant = selectedRestaurant else {
@@ -66,6 +98,25 @@ class RestaurantDetailViewController: UITableViewController {
 		mapView.setRegion(region, animated: true)
 		mapView.addAnnotations([annotation])
 		
+	}
+	
+	func checkReviews() {
+		if let id = selectedRestaurant?.restaurantID {
+			manager.fetchReview(by: id)
+		}
+		
+		let count = manager.numberOfItems
+		
+		if count > 0  {
+			noReviewsContainer.isHidden = true
+		}
+		
+		let item = manager.getLatestReview()
+		lblUser.text = item.name
+		txtReview.text = item.customerReivew
+		if let rating = item.rating {
+			imgRating.image = UIImage(named: Rating.image(rating: rating))
+		}
 	}
 
 }

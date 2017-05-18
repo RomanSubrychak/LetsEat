@@ -16,10 +16,13 @@ class ExploreViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 	let manager = ExploreDataManager()
 	
+	fileprivate let minItemSpacing: CGFloat = 7
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		manager.fetch()
+		initialize()
+		
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,6 +34,22 @@ class ExploreViewController: UIViewController {
 		default:
 			print("Segue not added")
 		}
+	}
+	
+	func initialize() {
+		manager.fetch()
+		if Device.isPad {
+			setupCollectionView()
+		}
+	}
+	
+	func setupCollectionView() {
+		let flow = UICollectionViewFlowLayout()
+		flow.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+		flow.minimumInteritemSpacing = 0
+		flow.minimumLineSpacing = 7
+		
+		collectionView?.collectionViewLayout = flow
 	}
 	
 	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -87,10 +106,29 @@ class ExploreViewController: UIViewController {
 			}
 		}
 	}
+	
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		
+	}
 }
 
 
-extension ExploreViewController: UICollectionViewDataSource {
+extension ExploreViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		if Device.isPad {
+			let factor = traitCollection.horizontalSizeClass == .compact ? 2 : 3
+			let screenRect = collectionView.frame.size.width
+			let screenWith = screenRect - (CGFloat(minItemSpacing) * CGFloat(factor + 1))
+			let cellWidth = screenWith / CGFloat(factor)
+			return CGSize(width: cellWidth, height: 154)
+		} else {
+			let screenRect = collectionView.frame.size.width
+			let screenWidth = screenRect - 21
+			let cellWidth = screenWidth / 2
+			return CGSize(width: cellWidth, height: 154)
+		}
+	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1

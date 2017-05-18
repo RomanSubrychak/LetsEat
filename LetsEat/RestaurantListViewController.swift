@@ -22,7 +22,7 @@ class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initialize()
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +42,26 @@ class RestaurantListViewController: UIViewController {
 		}
 	}
 	
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		collectionView.reloadData()
+	}
+	
+	func initialize() {
+		if Device.isPad {
+			setupCollectionView()
+		}
+	}
+	
+	func setupCollectionView() {
+		let flow = UICollectionViewFlowLayout()
+		
+		flow.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+		flow.minimumInteritemSpacing = 0
+		flow.minimumLineSpacing = 7
+		collectionView.collectionViewLayout = flow
+		
+	}
+	
 	func showRestaurantDetail(segue: UIStoryboardSegue) {
 		if let viewController = segue.destination as? RestaurantDetailViewController, let index = collectionView.indexPathsForSelectedItems?.first {
 			selectedRestaurant = manager.restaurantItem(at: index)
@@ -50,7 +70,19 @@ class RestaurantListViewController: UIViewController {
 	}
 }
 
-extension RestaurantListViewController: UICollectionViewDataSource {
+extension RestaurantListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		if Device.isPhone {
+			let cellWidth = collectionView.frame.size.width
+			return CGSize(width: cellWidth, height: 135)
+		} else {
+			let screenRect = collectionView.frame.size.width
+			let screenWidth = screenRect - 21
+			let cellWidth = screenWidth / 2.0
+			return CGSize(width: cellWidth, height: 135)
+		}
+	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1

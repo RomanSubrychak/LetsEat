@@ -13,7 +13,7 @@ import MobileCoreServices
 class ApplyFilterViewController: UIViewController {
 	
 	var image: UIImage?
-	var thumbnail: UIImageView?
+	var thumbnail: UIImage?
 	let manager = FilterManager()
 	
 	@IBOutlet weak var scrollView: UIScrollView!
@@ -29,7 +29,7 @@ class ApplyFilterViewController: UIViewController {
 	func initialize() {
 		manager.fetch()
 		
-		if let image = self.image, let thumb = self.thumbnail?.image {
+		if let image = self.image, let thumb = self.thumbnail {
 			createScrollContent(img: thumb)
 			imgExample.image = image
 		}
@@ -46,10 +46,12 @@ class ApplyFilterViewController: UIViewController {
 				let subView = PhotoItem(frame: frame, image: img, item: item)
 				
 				subView.delegate = self
+				
+				self.scrollView.addSubview(subView)
 				currentViewOffset += (size + 10)
 			}
 			self.scrollView.showsHorizontalScrollIndicator = false
-			self.scrollView.contentSize = CGSize(width: CGFloat(self.manager.numberOfItems * 113), height: size)
+			self.scrollView.contentSize = CGSize(width: CGFloat(self.manager.numberOfItems) * 113, height: size)
 		}
 	}
 }

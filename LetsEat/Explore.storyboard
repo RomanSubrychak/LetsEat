@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="196" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcX-d5-9q6">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcX-d5-9q6">
                                                     <rect key="frame" x="0.0" y="0.0" width="196" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="fxn-5x-RE3"/>
@@ -64,6 +64,7 @@
                                             <constraint firstItem="tFA-U9-ezG" firstAttribute="top" secondItem="pcX-d5-9q6" secondAttribute="bottom" constant="5" id="WLl-gW-3so"/>
                                             <constraint firstAttribute="trailing" secondItem="pcX-d5-9q6" secondAttribute="trailing" id="a8V-Qp-ml8"/>
                                             <constraint firstItem="pcX-d5-9q6" firstAttribute="top" secondItem="eG5-1w-2Ad" secondAttribute="top" id="eRh-Lx-nvJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="pcX-d5-9q6" secondAttribute="trailing" id="oVL-NC-vM2"/>
                                         </constraints>
                                         <size key="customSize" width="196" height="154"/>
                                         <connections>

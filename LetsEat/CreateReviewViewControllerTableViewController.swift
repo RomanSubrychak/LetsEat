@@ -17,6 +17,10 @@ class CreateReviewViewControllerTableViewController: UITableViewController {
 	@IBOutlet weak var btnThumbnail: UIButton!
 	@IBOutlet weak var btnRating: UIButton!
 	
+	var selectedRating: Rating = .zero
+	var selectedRestaurantID: Int?
+	var imageFiltered: UIImage?
+	
 	var image: UIImage?
 	var thumbnail: UIImage?
 
@@ -30,6 +34,8 @@ class CreateReviewViewControllerTableViewController: UITableViewController {
 		switch segue.identifier! {
 		case Segue.applyFilter.rawValue:
 			showApplyFilter(with: segue)
+		case Segue.showRating.rawValue:
+			showRating(with: segue)
 		default:
 			print("not segue added")
 		}
@@ -53,7 +59,15 @@ class CreateReviewViewControllerTableViewController: UITableViewController {
 				return
 		}
 		viewController.image = image
-		viewController.thumbnail?.image = thumbnail
+		viewController.thumbnail = thumbnail
+	}
+	
+	func showRating(with segue: UIStoryboardSegue) {
+		guard let navController = segue.destination as? UINavigationController,
+			let viewController = navController.topViewController as? StarRatingViewController else {
+				return
+		}
+		viewController.selectedRating = selectedRating
 	}
 	
 	func requestAccess() {
@@ -90,19 +104,41 @@ class CreateReviewViewControllerTableViewController: UITableViewController {
 	}
 	
 	@IBAction func unwindRatingSave(segue: UIStoryboardSegue) {
-		
+		guard let viewController = segue.source as? StarRatingViewController else {
+			return
+		}
+		selectedRating = viewController.selectedRating
+		btnRating.setImage(UIImage(named: Rating.image(rating: selectedRating.rawValue)), for: .normal)
 	}
 	
 	@IBAction func unwindFilterSave(segue: UIStoryboardSegue) {
-		if segue.source is ApplyFilterViewController {
-			if let thumbnail = thumbnail {
+		if let viewController = segue.source as? ApplyFilterViewController {
+			if let thumbnail = viewController.imgExample.image {
 				btnThumbnail.setImage(thumbnail, for: .normal)
+				imageFiltered = generate(image: thumbnail, ratio: CGFloat(102))
 			}
 		}
 	}
 	
 	@IBAction func onPhotoTapped(_ sender: AnyObject) {
 		checkSource()
+	}
+	
+	@IBAction func onSaveTapped(_ sender: AnyObject) {
+		var item = ReviewItem()
+		item.name = tfName.text
+		item.customerReivew = tvReview.text
+		item.restaurantID = selectedRestaurantID
+		item.photo = imageFiltered
+		item.rating = selectedRating.rawValue
+		
+		let manager = CoreDataManager()
+		manager.addReveiw(item)
+		_ = navigationController?.popViewController(animated: true)
+	}
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
 	}
 
 }
@@ -167,9 +203,8 @@ extension CreateReviewViewControllerTableViewController: UIImagePickerController
 		let image = info[UIImagePickerControllerEditedImage] as? UIImage
 		
 		if let img = image {
-			let genImage = generate(image: img, ratio: CGFloat(102))
-			self.btnThumbnail.imageView?.image = genImage
-			self.thumbnail = genImage.copy() as? UIImage
+			self.btnThumbnail.imageView?.image = generate(image: img, ratio: CGFloat(102))
+			self.thumbnail = generate(image: img, ratio: CGFloat(102))
 			self.image = generate(image: img, ratio: CGFloat(752))
 		}
 		

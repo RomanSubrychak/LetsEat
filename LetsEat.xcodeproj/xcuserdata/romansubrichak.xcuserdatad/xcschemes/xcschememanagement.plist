@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>LetsEatContentExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>LetsEatDataKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>964E7D121EBD7EBF003B2CFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9692098A1ECE6FA300AE6A58</key>
 		<dict>
 			<key>primary</key>
 			<true/>

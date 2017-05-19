@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import LetsEatDataKit
+import UserNotifications
 
 class RestaurantDetailViewController: UITableViewController {
 	
@@ -81,6 +82,11 @@ class RestaurantDetailViewController: UITableViewController {
 	func initialize() {
 		setupLabels()
 		setupMap()
+		setupUserNotificationCenter()
+	}
+	
+	func setupUserNotificationCenter() {
+		UNUserNotificationCenter.current().delegate = self
 	}
 	
 	func setupMap() {
@@ -120,6 +126,40 @@ class RestaurantDetailViewController: UITableViewController {
 		}
 	}
 
+	func showNotification(sender: String?) {
+		let content = UNMutableNotificationContent()
+		if let name = selectedRestaurant?.name {
+			content.title = name
+		}
+		if let time = sender {
+			content.body = "Table for 7 at \(time)"
+		}
+		content.subtitle = "Restaurant Reservation"
+		content.badge = 1
+		content.sound = UNNotificationSound.default()
+		content.categoryIdentifier = "reservationCategory"
+		
+		do {
+			let url = Bundle.main.url(forResource: "sample-restaurant-img@3x", withExtension: "png")
+			if let imgURL = url {
+				let attachment = try UNNotificationAttachment(identifier: "letsEatReservation", url: imgURL, options: nil)
+				content.attachments = [attachment]
+				
+				let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+				let identifier = "letsEatReservation"
+				let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+				UNUserNotificationCenter.current().add(request) { error in
+					
+				}
+			}
+		} catch {
+			print(error.localizedDescription)
+		}
+	}
+	
+	@IBAction func onTimeTapped(sender: UIButton) {
+		showNotification(sender: sender.titleLabel?.text)
+	}
 }
 
 extension RestaurantDetailViewController: MKMapViewDelegate {
@@ -146,8 +186,24 @@ extension RestaurantDetailViewController: MKMapViewDelegate {
 		
 		return annotationView
 	}
-	
 }
 
-
+extension RestaurantDetailViewController: UNUserNotificationCenterDelegate {
+	
+	@objc(userNotificationCenter:willPresentNotification:withCompletionHandler:) func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		completionHandler([.alert, .sound])
+	}
+	
+	@nonobjc func userNotficationCEnter(_ center: UNUserNotificationCenter, didRecieve response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		if let identifier = Option(rawValue: response.actionIdentifier) {
+			switch identifier {
+			case .one:
+				print("User selected yes")
+			case .two:
+				print("User selected no")
+			}
+		}
+		completionHandler()
+	}
+}
 

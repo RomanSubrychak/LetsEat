@@ -69,4 +69,24 @@ class CoreDataManager: NSObject {
 			print(error.localizedDescription)
 		}
 	}
+	
+	func addFavorite(by restaurantID: Int) {
+		let item = Favorite(context: container.viewContext)
+		item.restaurantID = Int32(restaurantID)
+		
+		save()
+	}
+	
+	func isFavorite(with identifier: Int) -> Bool {
+		let moc = container.viewContext
+		let request: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+		let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
+		request.predicate = predicate
+		do {
+			let count = try moc.count(for: request)
+			return count == 0 ? false : true
+		} catch {
+			fatalError("Failed to fetch reviews \(error)")
+		}
+	}
 }

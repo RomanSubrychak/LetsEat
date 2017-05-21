@@ -4,6 +4,27 @@
 <dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string></string>
+	<key>UIApplicationShortcutItem</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut-map</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Map</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).openMap</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut-location</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Locations</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).openLocations</string>
+		</dict>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>The app uses your camera to take a pictures</string>
 	<key>NSPhotoLibraryUsageDescription</key>

@@ -13,7 +13,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	var launchedShortcutItem: UIApplicationShortcutItem?
+	static let applicationShortcutUserInfoIconKey = "applicationShortcutUserInfoIconKey"
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		setupDefaultColors()
 		checkNotifications()
 		
-		return true
+		return checkShortCut(application, lounchOptions: launchOptions)
 	}
 	
 	func checkNotifications() {
@@ -32,6 +33,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let category = UNNotificationCategory(identifier: Identifier.reservationCategory.rawValue, actions: [optionOne, optionTwo], intentIdentifiers: [], options: [])
 			UNUserNotificationCenter.current().setNotificationCategories([category])
 		}
+	}
+	
+	func checkShortCut(_ application: UIApplication, lounchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		var isPerformingAdditionalDelegateHandling = true
+		if let shortcutItem = lounchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+			launchedShortcutItem = shortcutItem
+			isPerformingAdditionalDelegateHandling = false
+		}
+		if let shortcutItems = application.shortcutItems, shortcutItems.isEmpty {
+			let laShortcut = UIMutableApplicationShortcutItem(type: Shortcut.openLosAngeles.type, localizedTitle: "Los Angelos", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "shortcut-city"), userInfo: nil)
+			let lvShortcut = UIMutableApplicationShortcutItem(type: Shortcut.openLasVegas.type, localizedTitle: "Las Vegas", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "shortcut-city"), userInfo: nil)
+			application.shortcutItems = [laShortcut, lvShortcut]
+		}
+		return isPerformingAdditionalDelegateHandling
+	}
+	
+	func handleShortcut(_ item: UIApplicationShortcutItem) -> Bool {
+		var isHandled = false
+		
+		guard Shortcut(with: item.type) != nil, let shortCutType = item.type as String?, let tabBarController = self.window?.rootViewController as? UITabBarController else {
+			return false
+		}
+		
+		switch shortCutType {
+		case Shortcut.openLocations.type:
+			tabBarController.selectedIndex = 0
+			let navController = window?.rootViewController?.childViewControllers.first as? UINavigationController
+			let viewController = navController?.childViewControllers.first as? ExploreViewController
+			viewController?.performSegue(withIdentifier: "locationList", sender: self)
+			isHandled = true
+			break
+		case Shortcut.openMap.type:
+			tabBarController.selectedIndex = 1
+			isHandled = true
+			break
+		case Shortcut.openLosAngeles.type:
+			let navController = window?.rootViewController?.childViewControllers.first as? UINavigationController
+			let viewController = navController?.childViewControllers.first as? ExploreViewController
+			viewController?.selectedCity = "Los Angeles"
+			tabBarController.selectedIndex = 1
+			tabBarController.selectedIndex = 0
+			break
+		case Shortcut.openLasVegas.type:
+			let navController = window?.rootViewController?.childViewControllers.first as? UINavigationController
+			let viewController = navController?.childViewControllers.first as? ExploreViewController
+			viewController?.selectedCity = "Las Vegas"
+			tabBarController.selectedIndex = 1
+			tabBarController.selectedIndex = 0
+			break
+		default:
+			break
+		}
+		return isHandled
+	}
+	
+	@objc(application:performActionForShortcutItem:completionHandler:) func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool)->Void) {
+		let handleShortcutItem = handleShortcut(shortcutItem)
+		completionHandler(handleShortcutItem)
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {
@@ -49,7 +108,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
-		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+		guard let item = launchedShortcutItem else {
+			return
+		}
+		_ = handleShortcut(item)
+		
+		launchedShortcutItem = nil
+		
+		if (application.applicationIconBadgeNumber != 0) {
+			application.applicationIconBadgeNumber = 0
+		}
 	}
 
 	func applicationWillTerminate(_ application: UIApplication) {
@@ -69,6 +137,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UITabBar.appearance().isTranslucent = false
 		UINavigationBar.appearance().isTranslucent = false
 	}
-
 }
 

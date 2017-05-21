@@ -46,6 +46,7 @@
 		969209921ECE6FA400AE6A58 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969209911ECE6FA400AE6A58 /* NotificationViewController.swift */; };
 		969209951ECE6FA400AE6A58 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969209931ECE6FA400AE6A58 /* MainInterface.storyboard */; };
 		969209991ECE6FA400AE6A58 /* LetsEatContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9692098B1ECE6FA300AE6A58 /* LetsEatContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		969BC4441ED0CF1200E0445F /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BC4431ED0CF1200E0445F /* Shortcut.swift */; };
 		96BA633A1EC1624A00813EED /* Aspen.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA632C1EC1624A00813EED /* Aspen.json */; };
 		96BA633B1EC1624A00813EED /* Boston.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA632D1EC1624A00813EED /* Boston.json */; };
 		96BA633C1EC1624A00813EED /* Charleston.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA632E1EC1624A00813EED /* Charleston.json */; };
@@ -210,6 +211,7 @@
 		969209911ECE6FA400AE6A58 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		969209941ECE6FA400AE6A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		969209961ECE6FA400AE6A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969BC4431ED0CF1200E0445F /* Shortcut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		96BA632C1EC1624A00813EED /* Aspen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Aspen.json; sourceTree = "<group>"; };
 		96BA632D1EC1624A00813EED /* Boston.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Boston.json; sourceTree = "<group>"; };
 		96BA632E1EC1624A00813EED /* Charleston.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Charleston.json; sourceTree = "<group>"; };
@@ -602,6 +604,7 @@
 				965F64981EC029B30056060F /* Segue.swift */,
 				96F617231ECD04F400953A14 /* Device.swift */,
 				969209851ECE6B1000AE6A58 /* Identifier.swift */,
+				969BC4431ED0CF1200E0445F /* Shortcut.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -957,6 +960,7 @@
 				9614969D1EC6B75200E3E415 /* CreateReviewViewControllerTableViewController.swift in Sources */,
 				96F617241ECD04F400953A14 /* Device.swift in Sources */,
 				964628F61EC7CB9500A9A599 /* ImageFiltering.swift in Sources */,
+				969BC4441ED0CF1200E0445F /* Shortcut.swift in Sources */,
 				96F649D01EC92DDA00A1F0BD /* RatingView.swift in Sources */,
 				96F649DA1EC949B300A1F0BD /* ReviewListViewController.swift in Sources */,
 				965F64791EBF7C2B0056060F /* ExploreCell.swift in Sources */,
@@ -1323,6 +1327,7 @@
 				9692099C1ECE6FA400AE6A58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96F6174E1ECD3DF500953A14 /* Build configuration list for PBXNativeTarget "MessageApp" */ = {
 			isa = XCConfigurationList;

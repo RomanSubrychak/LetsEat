@@ -12,9 +12,17 @@ import LetsEatDataKit
 
 class MapViewController: UIViewController {
 	
+	@IBOutlet weak var lbLocation: UILabel!
 	@IBOutlet weak var mapView: MKMapView!
 	let manager = MapDataManager()
 	var selectedRestaurant: RestaurantItem?
+	var selectedCity: String? {
+		didSet {
+			lbLocation.text = selectedCity
+			manager.fetch(city: selectedCity!) { [unowned self]
+				annotations in self.addMap(annotations) }
+		}
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +35,18 @@ class MapViewController: UIViewController {
 			switch identifier {
 			case Segue.showDetail.rawValue:
 				showRestaurantDetail(segue: segue)
+			case Segue.locationList.rawValue:
+				showLocationList(segue: segue)
 			default:
 				print("Segue not added")
 			}
+		}
+	}
+	
+	func showLocationList(segue: UIStoryboardSegue) {
+		if let navController = segue.destination as? UINavigationController, let viewController = navController.topViewController as? LocationViewController
+			{
+				viewController.selectedCity = self.selectedCity
 		}
 	}
 	
@@ -41,9 +58,9 @@ class MapViewController: UIViewController {
 	
 	func initialize() {
 		mapView.delegate = self
-		manager.fetch { [unowned self]
-			annotations in self.addMap(annotations) }
-			
+		if selectedCity == nil {
+			selectedCity = "Chicago"
+		}
 	}
 	
 	func addMap(_ annotations: [RestaurantAnnotation]) {
@@ -56,7 +73,9 @@ class MapViewController: UIViewController {
 	}
 	
 	func unwindLocationDone(segue: UIStoryboardSegue) {
-		
+		if let viewController = segue.source as? LocationViewController {
+			selectedCity = viewController.selectedCity
+		}
 	}
 }
 

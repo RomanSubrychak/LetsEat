@@ -62,6 +62,7 @@
 		96BA63461EC1624A00813EED /* San Antonio.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA63381EC1624A00813EED /* San Antonio.json */; };
 		96BA63471EC1624A00813EED /* San Francisco.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA63391EC1624A00813EED /* San Francisco.json */; };
 		96BA634D1EC184E100813EED /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA634C1EC184E100813EED /* RestaurantCell.swift */; };
+		96EED9151ED3A7920050730F /* LocationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EED9141ED3A7920050730F /* LocationList.storyboard */; };
 		96F617241ECD04F400953A14 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F617231ECD04F400953A14 /* Device.swift */; };
 		96F617411ECD3DF500953A14 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F6172A1ECD3DB700953A14 /* Messages.framework */; };
 		96F617441ECD3DF500953A14 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F617431ECD3DF500953A14 /* MessagesViewController.swift */; };
@@ -229,6 +230,7 @@
 		96BA63481EC1634900813EED /* RestaurantAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantAPIManager.swift; path = ../LetsEat/RestaurantAPIManager.swift; sourceTree = "<group>"; };
 		96BA634C1EC184E100813EED /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		96BA634F1EC185D100813EED /* RestaurantDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantDataManager.swift; path = ../LetsEat/RestaurantDataManager.swift; sourceTree = "<group>"; };
+		96EED9141ED3A7920050730F /* LocationList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationList.storyboard; sourceTree = "<group>"; };
 		96F617231ECD04F400953A14 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		96F6172A1ECD3DB700953A14 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		96F617401ECD3DF500953A14 /* MessageApp.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageApp.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -448,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
+				96EED9141ED3A7920050730F /* LocationList.storyboard */,
 				965F64961EC028140056060F /* RestaurantDetail.storyboard */,
 				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
 				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
@@ -823,18 +826,22 @@
 				TargetAttributes = {
 					964E7D121EBD7EBF003B2CFD = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 238S5T6M6S;
 						ProvisioningStyle = Automatic;
 					};
 					9692098A1ECE6FA300AE6A58 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 238S5T6M6S;
 						ProvisioningStyle = Automatic;
 					};
 					96F6173F1ECD3DF500953A14 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 238S5T6M6S;
 						ProvisioningStyle = Automatic;
 					};
 					96F617571ECD41EF00953A14 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 238S5T6M6S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -868,6 +875,7 @@
 				964E7D3D1EBD9A9C003B2CFD /* Explore.storyboard in Resources */,
 				96F649D41EC932D300A1F0BD /* RatingView.xib in Resources */,
 				964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */,
+				96EED9151ED3A7920050730F /* LocationList.storyboard in Resources */,
 				969209831ECE667800AE6A58 /* sample-restaurant-img@2x.png in Resources */,
 				969209841ECE667800AE6A58 /* sample-restaurant-img@3x.png in Resources */,
 				964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */,
@@ -1182,12 +1190,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = LetsEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1196,18 +1205,20 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = LetsEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		9692099B1ECE6FA400AE6A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat.LetsEatContentExtension;
@@ -1220,6 +1231,7 @@
 		9692099C1ECE6FA400AE6A58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat.LetsEatContentExtension;
@@ -1233,6 +1245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = MessageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat.MessageApp;
@@ -1246,6 +1259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				INFOPLIST_FILE = MessageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roman.subrychak.LetsEat.MessageApp;
@@ -1260,8 +1274,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1284,6 +1300,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 238S5T6M6S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

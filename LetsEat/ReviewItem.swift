@@ -28,7 +28,7 @@ struct ReviewItem {
 	var displayDate: String {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "MMMM, dd, yyyy"
-		return formatter.string(from: self.date as! Date)
+		return formatter.string(from: self.date! as Date)
 	}
 }
 

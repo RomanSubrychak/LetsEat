@@ -18,11 +18,11 @@ class MapDataManager: DataManager {
 		return items;
 	}
 	
-	func fetch(completion: (_ anotations: [RestaurantAnnotation]) -> () ) {
+	func fetch(city: String, completion: (_ anotations: [RestaurantAnnotation]) -> () ) {
 		if !items.isEmpty {
 			items.removeAll()
 		}
-		for data in RestaurantAPIManager.loadJSON(file: "Chicago") {
+		for data in RestaurantAPIManager.loadJSON(file: city) {
 			items.append(RestaurantAnnotation(dict: data))
 		}
 		

@@ -40,7 +40,7 @@ class RestaurantDetailViewController: UITableViewController {
 			}
 		}
 		let cancel = UIPreviewAction(title: "Cancel", style: .destructive) {
-			[unowned self] (action, viewController) in
+			(action, viewController) in
 			print("You hit cancel")
 		}
 		return [favorite, cancel]

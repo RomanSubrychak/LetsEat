@@ -494,6 +494,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnHeart" destination="K55-Lc-uO0" id="bUJ-ZG-lZw"/>
                         <outlet property="imgRating" destination="QSG-bh-vlD" id="D1k-45-DRx"/>
                         <outlet property="lblAddress" destination="oFn-bT-dqB" id="PA6-CS-JQr"/>
                         <outlet property="lblCuisine" destination="8nY-wk-tj0" id="BRf-NF-C43"/>

@@ -26,6 +26,6 @@ enum Shortcut: String {
 			return ""
 		}
 		
-		return identifier + "\(self.rawValue)"
+		return identifier + ".\(self.rawValue)"
 	}
 }

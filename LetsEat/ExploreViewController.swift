@@ -10,7 +10,11 @@ import UIKit
 
 class ExploreViewController: UIViewController {
 	
-	var selectedCity: String?
+	var selectedCity: String? {
+		didSet {
+			lblLocation.text = selectedCity
+		}
+	}
 	@IBOutlet weak var lblLocation: UILabel!
 
 	@IBOutlet weak var collectionView: UICollectionView!
@@ -101,9 +105,6 @@ class ExploreViewController: UIViewController {
 	@IBAction func unwindLocationDone(segue: UIStoryboardSegue) {
 		if let viewController = segue.source as? LocationViewController {
 			selectedCity = viewController.selectedCity
-			if let location = viewController.selectedCity {
-				lblLocation.text = location
-			}
 		}
 	}
 	

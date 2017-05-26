@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		setupDefaultColors()
 		checkNotifications()
 		
-		return checkShortCut(application, lounchOptions: launchOptions)
+		return chekcShortcut(application, launchOptions: launchOptions)
 	}
 	
 	func checkNotifications() {
@@ -35,14 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
 	}
 	
-	func checkShortCut(_ application: UIApplication, lounchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+	func chekcShortcut(_ application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		
 		var isPerformingAdditionalDelegateHandling = true
-		if let shortcutItem = lounchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+		
+		if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
 			launchedShortcutItem = shortcutItem
 			isPerformingAdditionalDelegateHandling = false
 		}
 		if let shortcutItems = application.shortcutItems, shortcutItems.isEmpty {
-			let laShortcut = UIMutableApplicationShortcutItem(type: Shortcut.openLosAngeles.type, localizedTitle: "Los Angelos", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "shortcut-city"), userInfo: nil)
+			let laShortcut = UIMutableApplicationShortcutItem(type: Shortcut.openLosAngeles.type, localizedTitle: "Los Angeles", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "shortcut-city"), userInfo: nil)
 			let lvShortcut = UIMutableApplicationShortcutItem(type: Shortcut.openLasVegas.type, localizedTitle: "Las Vegas", localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "shortcut-city"), userInfo: nil)
 			application.shortcutItems = [laShortcut, lvShortcut]
 		}
@@ -51,17 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func handleShortcut(_ item: UIApplicationShortcutItem) -> Bool {
 		var isHandled = false
-		
-		guard Shortcut(with: item.type) != nil, let shortCutType = item.type as String?, let tabBarController = self.window?.rootViewController as? UITabBarController else {
+		guard Shortcut(with: item.type) != nil, let shortcutType = item.type as String?, let tabBarController = self.window?.rootViewController as? UITabBarController else {
+			print("fucked")
 			return false
 		}
-		
-		switch shortCutType {
+		switch shortcutType {
 		case Shortcut.openLocations.type:
 			tabBarController.selectedIndex = 0
-			let navController = window?.rootViewController?.childViewControllers.first as? UINavigationController
-			let viewController = navController?.childViewControllers.first as? ExploreViewController
-			viewController?.performSegue(withIdentifier: "locationList", sender: self)
+			let navController = window!.rootViewController!.childViewControllers.first as! UINavigationController
+			let viewController = navController.childViewControllers.first as! ExploreViewController
+			viewController.performSegue(withIdentifier: Segue.locationList.rawValue, sender: self)
 			isHandled = true
 			break
 		case Shortcut.openMap.type:

@@ -62,7 +62,6 @@
 		96BA63461EC1624A00813EED /* San Antonio.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA63381EC1624A00813EED /* San Antonio.json */; };
 		96BA63471EC1624A00813EED /* San Francisco.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BA63391EC1624A00813EED /* San Francisco.json */; };
 		96BA634D1EC184E100813EED /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA634C1EC184E100813EED /* RestaurantCell.swift */; };
-		96EED9151ED3A7920050730F /* LocationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EED9141ED3A7920050730F /* LocationList.storyboard */; };
 		96F617241ECD04F400953A14 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F617231ECD04F400953A14 /* Device.swift */; };
 		96F617411ECD3DF500953A14 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F6172A1ECD3DB700953A14 /* Messages.framework */; };
 		96F617441ECD3DF500953A14 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F617431ECD3DF500953A14 /* MessagesViewController.swift */; };
@@ -230,7 +229,6 @@
 		96BA63481EC1634900813EED /* RestaurantAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantAPIManager.swift; path = ../LetsEat/RestaurantAPIManager.swift; sourceTree = "<group>"; };
 		96BA634C1EC184E100813EED /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		96BA634F1EC185D100813EED /* RestaurantDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantDataManager.swift; path = ../LetsEat/RestaurantDataManager.swift; sourceTree = "<group>"; };
-		96EED9141ED3A7920050730F /* LocationList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationList.storyboard; sourceTree = "<group>"; };
 		96F617231ECD04F400953A14 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		96F6172A1ECD3DB700953A14 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		96F617401ECD3DF500953A14 /* MessageApp.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageApp.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,7 +448,6 @@
 			isa = PBXGroup;
 			children = (
 				964E7D3C1EBD9A9C003B2CFD /* Explore.storyboard */,
-				96EED9141ED3A7920050730F /* LocationList.storyboard */,
 				965F64961EC028140056060F /* RestaurantDetail.storyboard */,
 				964E7D1A1EBD7EBF003B2CFD /* Main.storyboard */,
 				964E7D3E1EBD9AF6003B2CFD /* Map.storyboard */,
@@ -875,7 +872,6 @@
 				964E7D3D1EBD9A9C003B2CFD /* Explore.storyboard in Resources */,
 				96F649D41EC932D300A1F0BD /* RatingView.xib in Resources */,
 				964E7D211EBD7EBF003B2CFD /* LaunchScreen.storyboard in Resources */,
-				96EED9151ED3A7920050730F /* LocationList.storyboard in Resources */,
 				969209831ECE667800AE6A58 /* sample-restaurant-img@2x.png in Resources */,
 				969209841ECE667800AE6A58 /* sample-restaurant-img@3x.png in Resources */,
 				964E7D401EBD9AF6003B2CFD /* Map.storyboard in Resources */,
